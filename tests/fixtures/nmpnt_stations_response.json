@@ -1,0 +1,7 @@
+{
+  "result": [
+    {"mmafCount": 12, "mmafCode": "101", "mmafNm": "부산청", "mmsi": "1019001", "stationNm": "남항동방파제등대", "windDirect": true, "windSpeed": true, "waterTemp": false, "salinity": false, "airTemp": true, "humidity": true, "airPressure": true, "hozionVisible": false, "current1": false, "waveDrc": false, "waveHeight": false, "tide": false, "observeItems": ", 풍향, 풍속, 기온, 습도, 기압"},
+    {"mmafCount": 0, "mmafCode": "101", "mmafNm": "부산청", "mmsi": "1019002", "stationNm": "부산항신항소형선부두등대", "windDirect": false, "windSpeed": false, "waterTemp": false, "salinity": false, "airTemp": false, "humidity": false, "airPressure": false, "hozionVisible": true, "current1": false, "waveDrc": false, "waveHeight": false, "tide": false, "observeItems": ", 시정"}
+  ],
+  "openApiStationInfoReq": {"item": "ALL"}
+}

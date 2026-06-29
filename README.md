@@ -10,7 +10,7 @@
 
 - [x] MTIS 해양사고 엑셀 로더 — 원본 컬럼을 분석용 스키마로 정규화, 발생일시 파싱
 - [x] 좌표 정제 — 한국 EEZ 대략 bbox 밖·결측 좌표 제거, 제거 건수 리포트
-- [ ] NMPNT 해양기상 수집·시간 리샘플
+- [x] NMPNT 해양기상 수집 — 76개 지점 목록·기간별 수집·10분→시간 리샘플(풍향은 벡터 평균)
 - [ ] 격자 배정 · 사고-기상 최근접 매칭 · negative sampling
 - [ ] 통계 분석(정규성 → 검정 선택 → 효과크기 → 다중보정, case-crossover)
 - [ ] 모델(로지스틱·GAM·부스팅 비교) · XAI
@@ -39,6 +39,17 @@ make clean-report
 # = uv run python scripts/clean_accidents.py
 # reports/clean/coordinate_cleaning.md 에 정제 리포트를 생성한다.
 ```
+
+## 해양기상 수집
+
+기상 수집에는 국립해양측위정보원(NMPNT) 서비스키가 필요하다. 환경변수 `NMPNT_SERVICE_KEY`로 주입한다(`.env.example` 참고).
+
+```bash
+make coverage                              # 지점 변수 커버리지 리포트(키 불필요)
+make collect START=20240115 END=20240115   # 기간별 수집·시간 리샘플 → data/cache/
+```
+
+지점별 관측 변수 커버리지는 `reports/weather/station_coverage.md`에 있다. 파고·파향은 모든 지점에서 미제공이라 분석에서 제외한다.
 
 ## 라이선스
 
