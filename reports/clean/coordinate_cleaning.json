@@ -1,0 +1,13 @@
+{
+  "total": 29695,
+  "kept": 28935,
+  "removed": 760,
+  "removed_missing": 0,
+  "removed_out_of_bbox": 760,
+  "bbox": {
+    "lat_min": 32.0,
+    "lat_max": 39.0,
+    "lon_min": 124.0,
+    "lon_max": 132.0
+  }
+}
