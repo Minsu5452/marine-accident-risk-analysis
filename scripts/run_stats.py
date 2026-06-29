@@ -98,9 +98,9 @@ def main() -> None:
     lines = [
         "# case-crossover 통계 분석",
         "",
-        "사고 시점 기상과 **사고 전 7일 동시간**(같은 위치·같은 관측 지점) 대조를 짝지어 비교했다.",
+        "사고 시점 기상과 **사고 전 7일 동시간**(같은 위치·같은 관측 지점) 대조를 짝지어 비교했습니다.",
         "변수별로 차이의 정규성을 확인해 짝 t검정 또는 Wilcoxon 부호순위 검정을 자동 선택하고,",
-        "여러 변수를 함께 검정하므로 Benjamini–Hochberg(FDR)로 p값을 보정했다.",
+        "여러 변수를 함께 검정하므로 Benjamini–Hochberg(FDR)로 p값을 보정했습니다.",
         "",
         f"- 정제 사고: {summary['accidents']:,}건 · 사고 시점 기상 매칭 {summary['case_matched']:,} · 대조 매칭 {summary['control_matched']:,}",
         "- 효과크기: 짝 t는 Cohen's d, Wilcoxon은 rank-biserial (양수면 사고 시점이 더 큼)",

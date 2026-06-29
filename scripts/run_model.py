@@ -101,11 +101,11 @@ def main() -> None:
         "# 모델 평가 — 격자×시간 사고 발생 확률",
         "",
         "연도 기준 OOF(out-of-fold) 교차검증으로 시간 누수를 막고, 해석 모델(로지스틱 회귀)과",
-        "성능 상한 비교용(LightGBM)을 같은 분할로 평가했다. 지표는 AUC·PR-AUC·Brier(낮을수록 좋음).",
+        "성능 상한 비교용(LightGBM)을 같은 분할로 평가했습니다. 지표는 AUC·PR-AUC·Brier(낮을수록 좋음).",
         "",
     ]
     if not HAS_LGBM:
-        lines += ["> LightGBM을 불러오지 못해 로지스틱 회귀만 평가했다.", ""]
+        lines += ["> LightGBM을 불러오지 못해 로지스틱 회귀만 평가했습니다.", ""]
     for res, r in report["by_resolution"].items():
         lines += [
             f"## 격자 {res}°",
