@@ -19,7 +19,7 @@
   --ind-strong: #34429e;
   --ind-bg: #eef0fb;
   --ind-bg-2: #e0e4f7;
-  /* 위험 = 웜 단색 램프 */
+  /* 위험 = 웜 단색 램프 (저→고). lib/format.ts 의 RAMP 와 같은 값이어야 한다 */
   --t0: #fbf1e0;
   --t1: #fad9a4;
   --t2: #f4a65a;
@@ -27,8 +27,16 @@
   --t4: #c8392b;
   --warm-bg: #fbe9e4;
   --warm-bg-2: #fcefe4;
-  --r-card: 12px;
+  /* 근차백색 표면 그레이 + 단일 호버 채움 */
+  --surface-1: #fbfcfd;
+  --surface-2: #f1f3f6;
+  --hover: #f7f8fa;
+  /* 라운드 스케일 (단일 출처) */
+  --r-xs: 4px;
+  --r-sm: 6px;
   --r-ctl: 8px;
+  --r-card: 12px;
+  --r-surface: 16px;
   --r-pill: 999px;
   --sh-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
   --sh-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.04);
@@ -93,7 +101,7 @@ header.top .wrap {
 .logo {
   width: 34px;
   height: 34px;
-  border-radius: 9px;
+  border-radius: var(--r-ctl);
   background: linear-gradient(180deg, #4f61d0, #36429e);
   display: flex;
   align-items: center;
@@ -160,7 +168,7 @@ header.top .wrap {
 }
 .head .lead {
   margin: 8px 0 0;
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--sub);
   max-width: 800px;
 }
@@ -195,7 +203,7 @@ header.top .wrap {
   border-right: 0;
 }
 .kpi .lab {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--sub-2);
   display: flex;
   align-items: center;
@@ -237,7 +245,7 @@ header.top .wrap {
   border: 1px solid var(--line);
   border-radius: var(--r-ctl);
   padding: 12px 15px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--sub);
   box-shadow: var(--sh-sm);
 }
@@ -267,7 +275,7 @@ header.top .wrap {
   height: 716px;
   background: var(--ocean);
   border: 1px solid var(--line-2);
-  border-radius: 16px;
+  border-radius: var(--r-surface);
   box-shadow: var(--sh-card);
   overflow: hidden;
 }
@@ -286,7 +294,7 @@ header.top .wrap {
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--sub);
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--line);
@@ -306,7 +314,7 @@ header.top .wrap {
   justify-content: center;
   gap: 10px;
   color: var(--sub);
-  font-size: 13.5px;
+  font-size: 13px;
   z-index: 5;
 }
 .spin {
@@ -329,7 +337,7 @@ header.top .wrap {
   z-index: 20;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--r-card);
   box-shadow: var(--sh-pop);
   overflow: hidden;
 }
@@ -341,7 +349,7 @@ header.top .wrap {
 }
 .flt .ph h2 {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -349,9 +357,9 @@ header.top .wrap {
   font-size: 11px;
   font-weight: 700;
   color: var(--sub-2);
-  background: #f1f3f6;
+  background: var(--surface-2);
   border: 1px solid var(--line-2);
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   padding: 2px 7px;
 }
 .tag.live {
@@ -397,7 +405,7 @@ header.top .wrap {
 }
 .seg {
   display: flex;
-  background: #f1f3f6;
+  background: var(--surface-2);
   border-radius: var(--r-ctl);
   padding: 3px;
   gap: 3px;
@@ -408,9 +416,9 @@ header.top .wrap {
   background: transparent;
   color: var(--sub);
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 12px;
   padding: 7px 0;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   cursor: pointer;
   transition: all 0.16s ease;
 }
@@ -429,7 +437,7 @@ header.top .wrap {
 
 /* 비활성(정적 데모) 그룹 */
 .fg.locked {
-  background: #fbfcfd;
+  background: var(--surface-1);
 }
 .locked .chips,
 .locked .seg,
@@ -439,12 +447,12 @@ header.top .wrap {
   pointer-events: none;
 }
 .lockbadge {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--sub-2);
-  background: #f1f3f6;
+  background: var(--surface-2);
   border: 1px solid var(--line-2);
-  border-radius: 5px;
+  border-radius: var(--r-sm);
   padding: 1px 6px;
   letter-spacing: 0.02em;
 }
@@ -480,13 +488,13 @@ header.top .wrap {
   color: var(--ink-2);
   padding: 5px 8px;
   margin: 0 -8px;
-  border-radius: 7px;
+  border-radius: var(--r-ctl);
 }
 .ck .b {
   width: 17px;
   height: 17px;
   border: 1.6px solid var(--sub-3);
-  border-radius: 5px;
+  border-radius: var(--r-sm);
   flex: 0 0 17px;
   position: relative;
   background: #fff;
@@ -508,7 +516,7 @@ header.top .wrap {
 }
 .ck .c {
   margin-left: auto;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--sub-3);
 }
 .lockednote {
@@ -516,7 +524,7 @@ header.top .wrap {
   color: var(--sub);
   padding: 11px 16px;
   border-top: 1px solid var(--line);
-  background: #fbfcfd;
+  background: var(--surface-1);
   line-height: 1.6;
 }
 .lockednote b {
@@ -589,7 +597,7 @@ header.top .wrap {
   text-align: right;
 }
 .subh {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--ink-2);
   margin: 15px 0 8px;
@@ -623,7 +631,7 @@ header.top .wrap {
 }
 .ctab .cond {
   color: var(--sub);
-  font-size: 11.5px;
+  font-size: 11px;
   padding-left: 8px;
 }
 .ctab .val {
@@ -699,7 +707,7 @@ header.top .wrap {
   border-radius: var(--r-pill);
   box-shadow: var(--sh-pop);
   padding: 9px 18px;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--sub);
   backdrop-filter: blur(6px);
   white-space: nowrap;
@@ -731,7 +739,7 @@ header.top .wrap {
   width: 11px;
   height: 11px;
   border: 2px solid var(--ind-strong);
-  border-radius: 3px;
+  border-radius: var(--r-xs);
   display: inline-block;
 }
 
@@ -762,7 +770,7 @@ header.top .wrap {
   font-weight: 700;
 }
 .panel > .ph .hint {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--sub-2);
 }
 table.t {
@@ -795,7 +803,7 @@ table.t tbody tr.clickable {
   cursor: pointer;
 }
 table.t tbody tr.clickable:hover {
-  background: #fafbfc;
+  background: var(--hover);
 }
 table.t tbody tr.sel {
   background: var(--ind-bg);
@@ -812,10 +820,10 @@ table.t tr:last-child td {
   justify-content: center;
   width: 22px;
   height: 22px;
-  border-radius: 7px;
+  border-radius: var(--r-ctl);
   font-size: 12px;
   font-weight: 800;
-  background: #f1f3f6;
+  background: var(--surface-2);
   color: var(--sub);
 }
 .rk.hot {
@@ -826,7 +834,7 @@ table.t tr:last-child td {
   display: inline-block;
   width: 10px;
   height: 10px;
-  border-radius: 3px;
+  border-radius: var(--r-xs);
   vertical-align: -1px;
   margin-right: 7px;
 }
@@ -834,7 +842,7 @@ table.t tr:last-child td {
   font-size: 11px;
   font-weight: 700;
   padding: 2px 7px;
-  border-radius: 5px;
+  border-radius: var(--r-sm);
 }
 .hist td.r {
   text-align: right;
@@ -845,7 +853,7 @@ table.t tr:last-child td {
 .hist tr.sum td {
   font-weight: 800;
   color: var(--ink);
-  background: #fbfcfd;
+  background: var(--surface-1);
 }
 
 /* ── 통계 탐색 ── */
@@ -874,7 +882,7 @@ table.t tr:last-child td {
   background: #fff;
   color: var(--sub);
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   padding: 7px 13px;
   border-radius: var(--r-pill);
@@ -928,7 +936,7 @@ table.t tr:last-child td {
 }
 .varitem:hover {
   border-color: var(--sub-3);
-  background: #f9fafc;
+  background: var(--hover);
 }
 .varitem.on {
   border-color: var(--ind);
@@ -946,9 +954,9 @@ table.t tr:last-child td {
 }
 .stat .meth {
   margin-top: 14px;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--sub);
-  background: #fbfcfd;
+  background: var(--surface-1);
   border: 1px solid var(--line);
   border-radius: var(--r-ctl);
   padding: 11px 12px;
@@ -962,7 +970,7 @@ table.t tr:last-child td {
   padding: 18px 22px;
 }
 .stat .summ {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--ink-2);
   background: var(--ind-bg);
   border: 1px solid var(--ind-bg-2);
@@ -1017,8 +1025,8 @@ table.t tr:last-child td {
 .ebar .track {
   position: relative;
   height: 16px;
-  background: #f4f5f7;
-  border-radius: 5px;
+  background: var(--bg);
+  border-radius: var(--r-sm);
 }
 .ebar .track .mid {
   position: absolute;
@@ -1032,7 +1040,7 @@ table.t tr:last-child td {
   position: absolute;
   top: 3px;
   height: 10px;
-  border-radius: 3px;
+  border-radius: var(--r-xs);
   background: var(--sub-3);
   transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -1048,7 +1056,7 @@ table.t tr:last-child td {
 .stab {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 .stab th {
   color: var(--sub-2);
@@ -1056,8 +1064,8 @@ table.t tr:last-child td {
   text-align: left;
   padding: 9px 10px;
   border-bottom: 1px solid var(--line-2);
-  font-size: 11.5px;
-  background: #fbfcfd;
+  font-size: 11px;
+  background: var(--surface-1);
 }
 .stab th.r,
 .stab td.r {
@@ -1091,7 +1099,7 @@ table.t tr:last-child td {
   color: var(--ind);
 }
 .sig.ns {
-  background: #f1f3f6;
+  background: var(--surface-2);
   color: var(--sub-2);
 }
 
@@ -1121,7 +1129,7 @@ footer .fb .nm span {
   color: var(--sub-2);
 }
 footer .meta {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--sub-2);
   text-align: right;
   line-height: 1.85;
@@ -1188,7 +1196,7 @@ button:focus-visible,
 /* ── MapLibre 컨트롤 라이트 톤 정리 ── */
 .stage .maplibregl-ctrl-group {
   border: 1px solid var(--line-2);
-  border-radius: 10px;
+  border-radius: var(--r-ctl);
   box-shadow: var(--sh-pop);
   overflow: hidden;
 }
@@ -1208,13 +1216,13 @@ button:focus-visible,
   border-color: var(--sub-2);
   color: var(--sub);
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 var(--r-sm) var(--r-sm);
   font-size: 11px;
 }
 .stage .maplibregl-ctrl-attrib {
   background: rgba(255, 255, 255, 0.82);
-  border-radius: 8px 0 0 0;
-  font-size: 10.5px;
+  border-radius: var(--r-ctl) 0 0 0;
+  font-size: 11px;
 }
 
 /* ── 반응형: 중앙 타이틀 pill이 좌우 플로팅 패널과 겹치지 않도록 ~1180px부터 패널을 지도 아래로 ── */
@@ -1234,7 +1242,7 @@ button:focus-visible,
     inset: auto;
     height: 440px;
     border: 1px solid var(--line-2);
-    border-radius: 14px;
+    border-radius: var(--r-card);
     overflow: hidden;
   }
   .stage .ttl {

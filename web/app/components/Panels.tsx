@@ -146,7 +146,7 @@ function EmptyResult({ resolution }: { resolution: Resolution }) {
       {resolution !== "0.1" && (
         <>
           <br />
-          <span style={{ fontSize: "11.5px" }}>
+          <span style={{ fontSize: "11px" }}>
             기여 요인·과거 사고 상세는 0.10° 격자에서 제공됩니다.
           </span>
         </>

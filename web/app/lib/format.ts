@@ -1,7 +1,8 @@
 import type { RiskLevel } from "./types";
 
-// 위험 = 웜 단색 램프 (사고 심각도 직관) — light-b.html 토큰과 동일
-export const RAMP = ["#FBF1E0", "#FAD9A4", "#F4A65A", "#E8703F", "#C8392B"] as const;
+// 위험 = 웜 단색 램프 (사고 심각도 직관, 저→고)
+// globals.css 의 --t0..--t4 와 같은 값이어야 한다(단일 출처). 한쪽을 바꾸면 다른 쪽도 함께 바꾼다.
+export const RAMP = ["#fbf1e0", "#fad9a4", "#f4a65a", "#e8703f", "#c8392b"] as const;
 
 interface LevelStyle {
   label: string;
@@ -12,16 +13,17 @@ interface LevelStyle {
 
 export const LEVELS: RiskLevel[] = ["veryhigh", "high", "mid", "low", "verylow"];
 
+// color/bg 의 웜 스톱은 RAMP(=globals.css --t0..--t4)와 같은 값을 쓴다
 export const LEVEL_STYLE: Record<RiskLevel, LevelStyle> = {
-  veryhigh: { label: "매우 높음", color: "#C8392B", on: "#FFFFFF", bg: "#C8392B" },
-  high: { label: "높음", color: "#E8703F", on: "#FFFFFF", bg: "#E8703F" },
-  mid: { label: "보통", color: "#F4A65A", on: "#7A3B12", bg: "#FCEFE4" },
-  low: { label: "낮음", color: "#FAD9A4", on: "#7A5A1E", bg: "#FBF1E0" },
-  verylow: { label: "매우 낮음", color: "#FBF1E0", on: "#69707B", bg: "#F4F5F7" },
+  veryhigh: { label: "매우 높음", color: "#c8392b", on: "#ffffff", bg: "#c8392b" },
+  high: { label: "높음", color: "#e8703f", on: "#ffffff", bg: "#e8703f" },
+  mid: { label: "보통", color: "#f4a65a", on: "#7a3b12", bg: "#fcefe4" },
+  low: { label: "낮음", color: "#fad9a4", on: "#7a5a1e", bg: "#fbf1e0" },
+  verylow: { label: "매우 낮음", color: "#fbf1e0", on: "#69707b", bg: "#f4f5f7" },
 };
 
 export function levelColor(level: RiskLevel): string {
-  return LEVEL_STYLE[level]?.color ?? "#FBF1E0";
+  return LEVEL_STYLE[level]?.color ?? "#fbf1e0";
 }
 
 // 숫자 포매팅 — 표는 tabular-nums(.num)로 정렬
