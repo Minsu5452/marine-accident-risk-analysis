@@ -1,7 +1,7 @@
 """모델 팩토리 — 폴드마다 새 추정기를 만든다(상태 누수 방지).
 
-해석 모델인 로지스틱 회귀를 1차로 둔다. GAM(pyGAM)·LightGBM 비교는 실데이터 단계에서
-같은 인터페이스(fit/predict_proba)로 끼워 넣는다.
+해석 모델인 로지스틱 회귀를 기본 추정기로 둔다. 성능 상한 비교용 LightGBM은
+같은 인터페이스(fit/predict_proba)로 run_model.py에서 함께 평가한다.
 """
 
 from __future__ import annotations
