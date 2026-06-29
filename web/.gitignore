@@ -12,3 +12,4 @@ next-env.d.ts
 
 # design scratch (시안)
 mockups/
+.vercel
