@@ -32,7 +32,7 @@ export function FilterPanel({
     <aside className="flt filter">
       <div className="ph">
         <h2>분석 조건</h2>
-        <span className="tag live">해상도 동작</span>
+        <span className="lockbadge">정적 데모 · 전체 고정</span>
       </div>
 
       <div className="fg">
@@ -52,9 +52,7 @@ export function FilterPanel({
       </div>
 
       <div className="fg locked">
-        <div className="l">
-          계절 <span className="lockbadge">정적 데모 고정</span>
-        </div>
+        <div className="l">계절</div>
         <div className="chips" aria-hidden="true">
           {LOCKED_SEASON.map((s, i) => (
             <span key={s} className={`chip${i === 0 ? " on" : ""}`}>
@@ -200,7 +198,9 @@ function DetailResult({ grid, detail }: { grid: GridCell; detail: CellDetail }) 
         rightBottom={
           <>
             전체 {int(detail.total_cells)}셀 중 <b>{detail.rank}위</b> ·{" "}
-            {topPctByRank(detail.rank, detail.total_cells)}
+            <span style={{ whiteSpace: "nowrap" }}>
+              {topPctByRank(detail.rank, detail.total_cells)}
+            </span>
           </>
         }
       />
