@@ -1,10 +1,6 @@
 # korean-marine-accident-risk
 
-[![Live Demo](https://img.shields.io/badge/라이브_데모-vercel-000000?logo=vercel&logoColor=white)](https://korean-marine-accident-risk.vercel.app)
-![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-static_export-000000?logo=nextdotjs&logoColor=white)
-![MapLibre](https://img.shields.io/badge/MapLibre-GL_JS-1E5CB3)
-![License](https://img.shields.io/badge/license-Apache--2.0-blue)
+[![Live Demo](https://img.shields.io/badge/라이브_데모-vercel-000000?logo=vercel&logoColor=white)](https://korean-marine-accident-risk.vercel.app) ![Python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 전국 연안의 해양사고 기록과 해양기상 관측을 결합해 **격자×시간 단위 사고 위험도**를 추정하고, 어떤 기상·환경 조건이 위험을 끌어올리는지 통계와 해석 모델로 설명하는 분석 프로젝트다. 결과는 해양경찰 순찰 배치 검토를 가정한 지도 대시보드로 보여준다.
 
@@ -30,23 +26,6 @@
 ## 아키텍처
 
 ![아키텍처](docs/diagrams/architecture.png)
-
-```text
-MTIS 사고 엑셀(2017~2025)              NMPNT 해양기상(2018~, 10분, 76지점)
-   │ 좌표 정제·시간 정규화                  │ 지점 수집·시간 리샘플(풍향 벡터 평균)
-   ▼                                        ▼
-사고 포인트 ─── 최근접 지점 거리 임계(60km·±30분) 매칭 ───► 사고×기상 결합
-   │                                                        │
-   │  격자(0.05/0.1/0.25°) 배정 + negative sampling          │
-   ▼                                                        ▼
-        격자×시간 학습 데이터셋 ──► ① 통계(정규성→검정 선택→효과크기→BH·case-crossover)
-                                    ② 모델(로지스틱·LightGBM, 연도 OOF)
-                                    ③ XAI(오즈비·순열 중요도)
-                                    ▼
-                              FastAPI 예측 API
-                                    ▼
-                  Next.js + MapLibre 지도 대시보드(정적 데모)
-```
 
 ## 기술 스택
 
@@ -122,17 +101,20 @@ npm run build                                                         # 정적 e
 ## 프로젝트 구조
 
 ```text
-src/marine_accident_risk/
-  data/      # MTIS 로더·좌표 정제·NMPNT 수집기·기상 캐시
-  grid/      # 격자 배정·negative sampling
-  matching/  # 사고-기상 최근접 매칭(haversine)
-  stats/     # 정규성·검정 선택·효과크기·BH·case-crossover
-  modeling/  # 특징 구성·OOF 교차검증·지표·임계값
-  serving/   # FastAPI 예측 API
-web/         # Next.js + MapLibre 대시보드, 정적 데모 데이터
-scripts/     # 수집·정제·데이터셋 빌드·분석·캡처 실행
-reports/     # 재현 가능한 통계·모델·XAI 리포트
-tests/       # 단위 테스트
+korean-marine-accident-risk/
+├── src/marine_accident_risk/
+│   ├── data/      # MTIS 로더·좌표 정제·NMPNT 수집기·기상 캐시
+│   ├── grid/      # 격자 배정·negative sampling
+│   ├── matching/  # 사고-기상 최근접 매칭(haversine)
+│   ├── stats/     # 정규성·검정 선택·효과크기·BH·case-crossover
+│   ├── modeling/  # 특징 구성·OOF 교차검증·지표·임계값
+│   └── serving/   # FastAPI 예측 API
+├── web/           # Next.js + MapLibre 대시보드, 정적 데모 데이터
+├── scripts/       # 수집·정제·데이터셋 빌드·분석·캡처 실행
+├── reports/       # 재현 가능한 통계·모델·XAI 리포트
+├── tests/         # 단위 테스트
+├── configs/       # 실행 설정(default.yaml)
+└── docs/          # 아키텍처 다이어그램(HTML·PNG)
 ```
 
 ## 구현하면서 신경 쓴 점

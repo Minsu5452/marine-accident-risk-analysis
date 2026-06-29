@@ -31,7 +31,7 @@
 <body>
   <div class="card">
     <h1>해양사고 위험 분석 — 데이터 흐름</h1>
-    <div class="sub">공개 데이터(MTIS 사고 · NMPNT 해양기상)에서 격자×시간 위험도와 그 근거까지. 모든 수치는 실측·재현 가능.</div>
+    <div class="sub">공개 데이터(MTIS 사고 · NMPNT 해양기상)에서 격자×시간 위험도와 그 근거까지, 모든 단계 재현 가능.</div>
     <div class="flow">
       <div class="row">
         <div class="box src"><div class="t">MTIS 해양사고 엑셀</div><div class="d">2017~2025 · 좌표 정제(한국 EEZ bbox)<br>29,695 → <b>28,935건</b> (760 범위 밖 제거)</div></div>
@@ -44,7 +44,7 @@
       <div class="arrow">↓</div>
       <div class="row">
         <div class="box analysis"><div class="t">① 통계</div><div class="d">case-crossover(7일 전 대조)<br>정규성→검정 선택·효과크기·BH 보정</div></div>
-        <div class="box analysis"><div class="t">② 모델</div><div class="d">로지스틱(해석) vs LightGBM(성능)<br>연도 OOF · AUC 0.65 / 0.83</div></div>
+        <div class="box analysis"><div class="t">② 모델</div><div class="d">로지스틱(해석) vs LightGBM(성능 상한)<br>연도 기준 OOF 교차검증</div></div>
         <div class="box analysis"><div class="t">③ XAI</div><div class="d">표준화 오즈비(신뢰구간)<br>순열 중요도</div></div>
       </div>
       <div class="arrow">↓</div>
