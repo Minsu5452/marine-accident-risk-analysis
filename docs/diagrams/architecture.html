@@ -43,7 +43,7 @@
       <div class="box dataset"><div class="t">격자 × 시간 학습 데이터셋</div><div class="d">격자 0.05 / 0.1 / 0.25° · 양성(사고 셀) + negative sampling(무사고 셀)</div></div>
       <div class="arrow">↓</div>
       <div class="row">
-        <div class="box analysis"><div class="t">① 통계</div><div class="d">case-crossover(7일 전 대조)<br>정규성→검정 선택·효과크기·BH 보정</div></div>
+        <div class="box analysis"><div class="t">① 통계</div><div class="d">시간층화 case-crossover<br>조건부 로지스틱 · 사고 유형군별 · BH 보정</div></div>
         <div class="box analysis"><div class="t">② 모델</div><div class="d">로지스틱(해석) vs LightGBM(성능 상한)<br>연도 기준 OOF 교차검증</div></div>
         <div class="box analysis"><div class="t">③ XAI</div><div class="d">표준화 오즈비(신뢰구간)<br>순열 중요도</div></div>
       </div>
