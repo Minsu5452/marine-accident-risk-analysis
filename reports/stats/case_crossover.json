@@ -1,79 +1,181 @@
 {
-  "accidents": 28935,
-  "case_matched": 15451,
-  "control_matched": 15408,
-  "lag_days": 7,
+  "design": "time-stratified case-crossover, conditional logistic regression",
+  "referents": "same calendar month, same weekday, same hour",
+  "n_strata": 9687,
+  "mean_referents_per_case": 3.13,
+  "or_unit": "per 1 SD increase",
   "fdr_alpha": 0.05,
-  "results": [
+  "overall_univariate": [
     {
-      "variable": "풍속(m/s)",
-      "n_pairs": 10235,
-      "test": "wilcoxon",
-      "effect_size": -0.0728,
-      "effect_name": "rank_biserial",
-      "pvalue": 2.25432162529744e-10,
-      "q_value": 1.578025137708208e-09,
+      "variable": "wind_speed",
+      "odds_ratio": 0.9032,
+      "ci_low": 0.8782,
+      "ci_high": 0.9289,
+      "pvalue": 1.1044154901060734e-12,
+      "n_strata": 9687,
+      "q_value": 3.767310183580852e-12,
       "significant": true
     },
     {
-      "variable": "기온(℃)",
-      "n_pairs": 10299,
-      "test": "wilcoxon",
-      "effect_size": 0.0265,
-      "effect_name": "rank_biserial",
-      "pvalue": 0.020027720750626435,
-      "q_value": 0.035048511313596264,
+      "variable": "air_temp",
+      "odds_ratio": 1.2483,
+      "ci_low": 1.1736,
+      "ci_high": 1.3277,
+      "pvalue": 1.883655091790426e-12,
+      "n_strata": 9687,
+      "q_value": 3.767310183580852e-12,
       "significant": true
     },
     {
-      "variable": "기압(hPa)",
-      "n_pairs": 10169,
-      "test": "wilcoxon",
-      "effect_size": 0.0297,
-      "effect_name": "rank_biserial",
-      "pvalue": 0.010428491040501012,
-      "q_value": 0.02433314576116903,
+      "variable": "air_pressure",
+      "odds_ratio": 1.0524,
+      "ci_low": 1.0096,
+      "ci_high": 1.0971,
+      "pvalue": 0.016034470160366743,
+      "n_strata": 9687,
+      "q_value": 0.021379293547155655,
       "significant": true
     },
     {
-      "variable": "습도(%)",
-      "n_pairs": 10215,
-      "test": "wilcoxon",
-      "effect_size": -0.0341,
-      "effect_name": "rank_biserial",
-      "pvalue": 0.0030605416263975857,
-      "q_value": 0.01071189569239155,
+      "variable": "humidity",
+      "odds_ratio": 0.9661,
+      "ci_low": 0.936,
+      "ci_high": 0.9972,
+      "pvalue": 0.03268609733932959,
+      "n_strata": 9687,
+      "q_value": 0.03268609733932959,
       "significant": true
-    },
-    {
-      "variable": "시정(m)",
-      "n_pairs": 3248,
-      "test": "wilcoxon",
-      "effect_size": 0.0211,
-      "effect_name": "rank_biserial",
-      "pvalue": 0.3763236926921527,
-      "q_value": 0.4390443081408449,
-      "significant": false
-    },
-    {
-      "variable": "수온(℃)",
-      "n_pairs": 885,
-      "test": "wilcoxon",
-      "effect_size": -0.0231,
-      "effect_name": "rank_biserial",
-      "pvalue": 0.5531982662323724,
-      "q_value": 0.5531982662323724,
-      "significant": false
-    },
-    {
-      "variable": "유속",
-      "n_pairs": 857,
-      "test": "wilcoxon",
-      "effect_size": 0.0799,
-      "effect_name": "rank_biserial",
-      "pvalue": 0.04725238316550097,
-      "q_value": 0.06615333643170135,
-      "significant": false
     }
-  ]
+  ],
+  "overall_adjusted": [
+    {
+      "variable": "wind_speed",
+      "odds_ratio": 0.92,
+      "ci_low": 0.8938,
+      "ci_high": 0.947,
+      "pvalue": 1.5393111035906266e-08,
+      "n_strata": 9687
+    },
+    {
+      "variable": "air_temp",
+      "odds_ratio": 1.2898,
+      "ci_low": 1.2062,
+      "ci_high": 1.3793,
+      "pvalue": 1.0280465487579441e-13,
+      "n_strata": 9687
+    },
+    {
+      "variable": "air_pressure",
+      "odds_ratio": 1.0774,
+      "ci_low": 1.0281,
+      "ci_high": 1.129,
+      "pvalue": 0.0018148121913431272,
+      "n_strata": 9687
+    },
+    {
+      "variable": "humidity",
+      "odds_ratio": 0.9594,
+      "ci_low": 0.9285,
+      "ci_high": 0.9914,
+      "pvalue": 0.013162877926579929,
+      "n_strata": 9687
+    }
+  ],
+  "by_type_group": {
+    "weather_sensitive": {
+      "types": [
+        "충돌",
+        "좌초",
+        "전복",
+        "접촉",
+        "침몰",
+        "침수"
+      ],
+      "n_strata": 3212
+    },
+    "mechanical": {
+      "types": [
+        "기관손상",
+        "부유물감김",
+        "추진축계손상",
+        "조타장치손상",
+        "운항저해"
+      ],
+      "n_strata": 5239
+    },
+    "odds_ratios": {
+      "wind_speed": {
+        "weather_sensitive": {
+          "variable": "wind_speed",
+          "odds_ratio": 1.0251,
+          "ci_low": 0.9781,
+          "ci_high": 1.0743,
+          "pvalue": 0.30021264508193624,
+          "n_strata": 3212
+        },
+        "mechanical": {
+          "variable": "wind_speed",
+          "odds_ratio": 0.8026,
+          "ci_low": 0.7709,
+          "ci_high": 0.8356,
+          "pvalue": 1.0842456135730957e-26,
+          "n_strata": 5239
+        }
+      },
+      "air_temp": {
+        "weather_sensitive": {
+          "variable": "air_temp",
+          "odds_ratio": 1.0311,
+          "ci_low": 0.9263,
+          "ci_high": 1.1478,
+          "pvalue": 0.5750545963312387,
+          "n_strata": 3212
+        },
+        "mechanical": {
+          "variable": "air_temp",
+          "odds_ratio": 1.4474,
+          "ci_low": 1.3303,
+          "ci_high": 1.5747,
+          "pvalue": 8.579524724179194e-18,
+          "n_strata": 5239
+        }
+      },
+      "air_pressure": {
+        "weather_sensitive": {
+          "variable": "air_pressure",
+          "odds_ratio": 0.9391,
+          "ci_low": 0.8754,
+          "ci_high": 1.0076,
+          "pvalue": 0.08016206330226562,
+          "n_strata": 3212
+        },
+        "mechanical": {
+          "variable": "air_pressure",
+          "odds_ratio": 1.1636,
+          "ci_low": 1.0981,
+          "ci_high": 1.233,
+          "pvalue": 2.937044466292541e-07,
+          "n_strata": 5239
+        }
+      },
+      "humidity": {
+        "weather_sensitive": {
+          "variable": "humidity",
+          "odds_ratio": 0.9339,
+          "ci_low": 0.8836,
+          "ci_high": 0.987,
+          "pvalue": 0.015384920726172466,
+          "n_strata": 3212
+        },
+        "mechanical": {
+          "variable": "humidity",
+          "odds_ratio": 0.9881,
+          "ci_low": 0.9464,
+          "ci_high": 1.0317,
+          "pvalue": 0.5868578515972753,
+          "n_strata": 5239
+        }
+      }
+    }
+  }
 }
