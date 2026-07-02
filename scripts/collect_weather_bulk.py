@@ -1,4 +1,4 @@
-"""NMPNT 해양기상 전기간 수집(재개 가능·동시성 제한·실패 격리).
+"""NMPNT 해양기상 전 기간 수집(재개 가능·동시성 제한·실패 격리).
 
 날짜별로 전 지점(기관별 묶음) 10분 관측을 받아 시간 단위로 리샘플하고, 날짜마다
 한 파일로 저장한다. 이미 있는 날짜는 건너뛰어 중단되어도 이어서 받는다. 개별 날짜의
@@ -70,7 +70,7 @@ def _collect_day(day: str, by_mmaf: dict[str, list[str]], key: str, out_dir: Pat
 
 
 def _parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="NMPNT 전기간 수집(재개 가능)")
+    p = argparse.ArgumentParser(description="NMPNT 전 기간 수집(재개 가능)")
     p.add_argument("--start", default="20180101", help="시작일 YYYYMMDD")
     p.add_argument("--end", default="20251231", help="종료일 YYYYMMDD")
     p.add_argument("--workers", type=int, default=4, help="동시 수집 일자 수")

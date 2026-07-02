@@ -2,7 +2,7 @@
 
 키는 환경변수 NMPNT_SERVICE_KEY로만 주입한다(레포엔 이름만).
 실행 예(스모크): uv run python scripts/collect_weather.py --start 20240115 --end 20240115 --limit-stations 3
-전 기간·전 지점 수집은 호출이 많아 오래 걸린다(데이터셋 빌드 단계에서 수행).
+전 기간·전 지점 수집은 호출이 많아 오래 걸린다(collect_weather_bulk.py 사용).
 출력: data/cache/stations.json, data/cache/weather_hourly.csv (둘 다 .gitignore).
 """
 

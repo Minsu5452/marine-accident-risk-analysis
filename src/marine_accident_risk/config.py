@@ -19,10 +19,10 @@ class Settings(BaseSettings):
     eez_lon_min: float = 124.0
     eez_lon_max: float = 132.0
 
-    # 격자 해상도(도). 세 해상도를 산출하고 프론트에서 선택한다
+    # 격자 해상도(도). 세 해상도를 산출하고 대시보드에서 선택한다
     grid_resolutions: list[float] = [0.05, 0.1, 0.25]
 
-    # 사고-기상 최근접 매칭(이후 단계에서 사용)
+    # 사고-기상 최근접 매칭 임계값(거리 km·시간 분)
     match_max_km: float = 60.0
     match_time_window_min: int = 30
 
