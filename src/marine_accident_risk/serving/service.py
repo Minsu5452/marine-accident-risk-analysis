@@ -82,7 +82,7 @@ class RiskService:
         }
 
     def _top_factors(self, k: int = 4) -> list[dict]:
-        """전역 XAI 오즈비 상위(위험을 끌어올리는 변수)를 셀 근거로 제공한다."""
+        """전역 XAI 오즈비 상위(위험을 높이는 변수)를 셀 근거로 제공한다."""
         try:
             data = self.xai()
         except FileNotFoundError:

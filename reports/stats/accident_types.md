@@ -25,7 +25,7 @@
 - 기상 민감형 소계(충돌·좌초·전복·접촉·침몰·침수): 9,631건 (33.3%)
 
 설비 고장형(기관손상·부유물감김 등)이 가장 큰 비중을 차지합니다. 이 구성은 위험도 분석에서 기상
-신호가 약하게 나오는 한 가지 이유이며, 시간층화 case-crossover에서 강한 기상 연관이 기계·비기상형
-사고에 몰려 있는 것과 맞물립니다([case_crossover.md](case_crossover.md)).
+신호가 약하게 나오는 이유 중 하나이며, 시간층화 case-crossover에서 강한 기상 연관이 기계·비기상형
+사고에 집중된 결과와도 일치합니다([case_crossover.md](case_crossover.md)).
 
 재현: `uv run python scripts/run_stats.py`
