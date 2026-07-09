@@ -1,4 +1,4 @@
-# korean-marine-accident-risk
+# 연안 해양사고 위험 분석
 
 [![CI](https://github.com/Minsu5452/korean-marine-accident-risk/actions/workflows/ci.yml/badge.svg)](https://github.com/Minsu5452/korean-marine-accident-risk/actions/workflows/ci.yml) [![Live Demo](https://img.shields.io/badge/라이브_데모-vercel-000000?logo=vercel&logoColor=white)](https://korean-marine-accident-risk.vercel.app) ![Python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
