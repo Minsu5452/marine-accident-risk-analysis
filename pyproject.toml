@@ -1,5 +1,5 @@
 [project]
-name = "korean-marine-accident-risk"
+name = "marine-accident-risk-analysis"
 version = "0.1.0"
 description = "한국 연안 해양사고 위험도 분석·예측"
 readme = "README.md"
@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Minsu5452/korean-marine-accident-risk"
+Repository = "https://github.com/Minsu5452/marine-accident-risk-analysis"
 
 [dependency-groups]
 dev = ["pytest>=8.0", "respx>=0.21", "ruff>=0.4", "mypy>=1.10"]

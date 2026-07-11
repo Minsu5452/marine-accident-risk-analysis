@@ -1,6 +1,6 @@
 # 연안 해양사고 위험 분석
 
-[![CI](https://github.com/Minsu5452/korean-marine-accident-risk/actions/workflows/ci.yml/badge.svg)](https://github.com/Minsu5452/korean-marine-accident-risk/actions/workflows/ci.yml) [![Live Demo](https://img.shields.io/badge/라이브_데모-vercel-000000?logo=vercel&logoColor=white)](https://korean-marine-accident-risk.vercel.app) ![Python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![CI](https://github.com/Minsu5452/marine-accident-risk-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/Minsu5452/marine-accident-risk-analysis/actions/workflows/ci.yml) [![Live Demo](https://img.shields.io/badge/라이브_데모-vercel-000000?logo=vercel&logoColor=white)](https://korean-marine-accident-risk.vercel.app) ![Python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 전국 연안의 해양사고 기록과 해양기상 관측을 결합해 **격자×시간 단위 사고 위험도**를 추정하고, 어떤 기상 조건이 위험을 높이는지 통계로 검증하는 분석 시스템입니다. 결과는 해양경찰 순찰 배치 검토를 가정한 지도 대시보드에서 확인할 수 있습니다.
 
@@ -113,7 +113,7 @@ npm run build                                                         # 정적 e
 ## 프로젝트 구조
 
 ```text
-korean-marine-accident-risk/
+marine-accident-risk-analysis/
 ├── src/marine_accident_risk/
 │   ├── data/      # MTIS 로더·좌표 정제·NMPNT 수집기·기상 캐시
 │   ├── grid/      # 격자 배정·negative sampling
