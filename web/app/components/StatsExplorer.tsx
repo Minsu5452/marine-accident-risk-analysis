@@ -87,7 +87,7 @@ function CaseView({
 
       <div className="view">
         <div className="summ">
-          <b>{varLabel(cur.variable)}</b> — 1표준편차 오를 때 사고 오즈 <b>{or2(cur.odds_ratio)}×</b>{" "}
+          <b>{varLabel(cur.variable)}</b>: 1표준편차 오를 때 사고 오즈 <b>{or2(cur.odds_ratio)}×</b>{" "}
           (95% CI {ci(cur.ci_low, cur.ci_high)}), {pval(cur.pvalue)} · FDR 보정{" "}
           {qval(cur.q_value ?? 1)} →{" "}
           <b>{cur.significant ? "통계적으로 유의" : "유의하지 않음"}</b>. 오즈비가 1보다 크면 값이
